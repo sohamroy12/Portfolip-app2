@@ -1,16 +1,19 @@
-# This is a sample Python script.
+import streamlit as st
+from PIL import Image, ImageOps
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+st.set_page_config(layout="wide")
+
+col1, col2 = st.columns(2)
+
+image = Image.open('images/IMG_4626.JPG')
+image = ImageOps.exif_transpose(image) #ImageOps.exif_transpose(image) reads the EXIF orientation tag (e.g., rotate 90°, flip, etc.) and transforms the image accordingly.
+
+with col1:
+    st.image(image, caption='Me with my Heart in hand')
+
+with col2:
+    st.text("Soham Roy")
+    content = """ I am a DevOps Engineer. To be better at my job I have now taken up the challenge to learn Python and Java"""
+    st.info(content)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
