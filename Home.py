@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image, ImageOps
 import pandas
-from streamlit import empty
 
 st.set_page_config(layout="wide")
 
